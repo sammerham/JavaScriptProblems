@@ -1,3 +1,5 @@
+'use strict'
+
 const flatten = arr => {
   let flattedArr = [];
   for (let el of arr) {
