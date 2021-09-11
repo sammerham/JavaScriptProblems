@@ -4,8 +4,8 @@ const twoSum = function (nums, target) {
 
   const map = new Map();
   for (let i = 0; i < nums.length; i++) {
-    let num = nums[i];
-    let diff = target - num;
+    const num = nums[i];
+    const diff = target - num;
 
     if (diff in map) {
       return [map[diff], i];
