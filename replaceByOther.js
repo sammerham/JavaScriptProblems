@@ -19,11 +19,11 @@ const arr2 = [
 const replaceByOther = (arr1, arr2) => {
   for (let i = 0; i < arr1.length; i++) {
     let el = arr1[i];
-    let idx = arr2.findIndex(elm => elm['id'] === el['id']);
+    let idx = arr2.findIndex(elm => elm.id === el.id);
     if (idx === -1) {
       continue;
     } else {
-      el['name'] = arr2[idx]['name'];
+      el.name = arr2[idx].name;
     }
   }
   return arr1;
