@@ -1,8 +1,8 @@
 'use strict'
 
 
-//We are required to write a JavaScript function that takes in one such array and 
-//returns an object of the object where the key of each object should be the id property.
+//We are required to write a function that takes in array of objects and 
+//returns an object where the key of each object should be the id property.
 
 const arr = [{ id: 1, name: "aa" }, { id: 2, name: "bb" }, { id: 3, name: "cc" }];
 //const output = {1:{name:"aa"},2:{name:"bb"},3:{name:"cc"}};

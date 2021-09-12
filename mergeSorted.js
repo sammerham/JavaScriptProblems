@@ -29,5 +29,6 @@ const mergeTwo = (arr1, arr2) => {
   return merged;
 }
 
+
 console.log(mergeTwo(arr1, arr2));
 [1, 2, 3, 5, 6, 7, 8, 10, 11, 15, 19, 20]
