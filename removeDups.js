@@ -9,9 +9,10 @@ const USERS = [
   { id: 38, fName: 'Oli', lName: 'Merham2' },
 ]
 
-
+// reduce the array to a 
 const removeDups = arr => [...arr.reduce((map, obj) => map.set(obj.id, obj), new Map()).values()];
   // const strArr = arr.map(obj => JSON.stringify(obj));
   // return [... new Set(strArr)].map(el => JSON.parse(el));
   
+
 console.log(removeDups(USERS));
