@@ -82,8 +82,37 @@ const mergeSort = arr => {
   return merge(left, right);
 }
 
-// console.log(bubbleSort(arr));
-// console.log(selectionSort(arr));
-// console.log(insertionSort(arr));
-// console.log(merge(arr1, arr2));
+
+const pivot = (arr, start = 0, end = arr.length - 1) => {
+  let pivot = arr[start];
+  let pivotIdx = start;
+
+  for (let i = start + 1; i < arr.length; i++) {
+    if (pivot > arr[i]) {
+      pivotIdx++;
+      swap(arr, pivotIdx, i);
+    }
+  }
+  swap(arr, start, pivotIdx);
+  // console.log(arr)
+  return pivotIdx;
+}
+ 
+const quickSort = (arr, start = 0, end = arr.length - 1) => {
+  if (start < end) {
+    let pivotIdx = pivot(arr, start, end); // 3
+    // left
+    quickSort(arr, start, pivotIdx - 1);
+    // right
+    quickSort(arr, pivotIdx + 1, end);
+  }
+  return arr;
+}
+
+console.log(bubbleSort(arr));
+console.log(selectionSort(arr));
+console.log(insertionSort(arr));
+console.log(merge(arr1, arr2));
 console.log(mergeSort(arr));
+console.log(pivot([4, 8, 2, 1, 5, 7, 6, 3]));
+console.log(quickSort(arr));
