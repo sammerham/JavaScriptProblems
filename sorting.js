@@ -21,6 +21,7 @@ const bubbleSort = arr => {
   }
   return arr;
 }
+
 const selectionSort = arr => {
   for (let i = 0; i < arr.length; i++) {
     let min = i;
@@ -34,7 +35,6 @@ const selectionSort = arr => {
   return arr;
 }
 
-
 const insertionSort = arr => {
   for (let i = 1; i < arr.length; i++) {
     for (let j = i; j > 0; j--) {
@@ -46,8 +46,7 @@ const insertionSort = arr => {
     }
   }
   return arr;
-};
-
+}
 
 const merge = (arr1, arr2) => {
   let merged = [];
@@ -56,22 +55,22 @@ const merge = (arr1, arr2) => {
   while (i < arr1.length && j < arr2.length) {
     if (arr1[i] < arr2[j]) {
       merged.push(arr1[i]);
-      i++
-    } else { 
+      i++;
+    } else {
       merged.push(arr2[j]);
       j++;
     }
   }
   while (i < arr1.length) {
     merged.push(arr1[i]);
-    i++
+    i++;
   }
   while (j < arr2.length) {
     merged.push(arr2[j]);
     j++;
   }
   return merged;
-}
+};
 
 const mergeSort = arr => {
   // basecase
@@ -87,32 +86,31 @@ const pivot = (arr, start = 0, end = arr.length - 1) => {
   let pivot = arr[start];
   let pivotIdx = start;
 
-  for (let i = start + 1; i < arr.length; i++) {
+  for (let i = start; i < arr.length; i++) {
     if (pivot > arr[i]) {
       pivotIdx++;
       swap(arr, pivotIdx, i);
     }
   }
   swap(arr, start, pivotIdx);
-  // console.log(arr)
   return pivotIdx;
 }
- 
-const quickSort = (arr, start = 0, end = arr.length - 1) => {
-  if (start < end) {
-    let pivotIdx = pivot(arr, start, end); // 3
-    // left
+
+
+const quickSort = (arr, start = 0, end = arr.length -1) => {
+  // basecase
+  if (start <= end) {
+    let pivotIdx = pivot(arr, start, end);
     quickSort(arr, start, pivotIdx - 1);
-    // right
     quickSort(arr, pivotIdx + 1, end);
   }
   return arr;
 }
-
-// console.log(bubbleSort(arr));
-// console.log(selectionSort(arr));
+console.log(bubbleSort(arr));
+console.log(selectionSort(arr));
 console.log(insertionSort(arr));
-// console.log(merge(arr1, arr2));
-// console.log(mergeSort(arr));
-// console.log(pivot([4, 8, 2, 1, 5, 7, 6, 3]));
-// console.log(quickSort(arr));
+console.log(merge(arr1, arr2));
+console.log(mergeSort(arr));
+console.log(pivot([4, 8, 2, 1, 5, 7, 6, 3]));
+console.log(quickSort(arr));
+
