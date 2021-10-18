@@ -10,7 +10,10 @@ const USERS = [
 ]
 
 // reduce the array to a 
-const removeDups = arr => [...arr.reduce((map, obj) => map.set(obj.id, obj), new Map()).values()];
+const removeDups = arr => {
+  const vals = arr.map(obj => JSON.stringify(obj))
+  return [...new Set(vals)].map(obj => JSON.parse(obj));
+}
   // const strArr = arr.map(obj => JSON.stringify(obj));
   // return [... new Set(strArr)].map(el => JSON.parse(el));
   

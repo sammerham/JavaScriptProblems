@@ -17,12 +17,10 @@ const arr2 = [
 ];
 
 const replaceByOther = (arr1, arr2) => {
-  for (let obj of arr1 ) {
-    let idx = arr2.findIndex(elm => elm.id === obj.id);
-    if (idx === -1) {
-      continue;
-    } else {
-      obj.name = arr2[idx].name;
+  for (let obj1 of arr1) {
+    let idx = arr2.findIndex(obj2 => obj1.id === obj2.id);
+    if (idx > - 1) {
+      obj1.name = arr2[idx].name;
     }
   }
   return arr1;
